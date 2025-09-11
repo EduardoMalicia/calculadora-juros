@@ -408,7 +408,7 @@ function renderGrafico(r){
 function exportCSV(linhas){
   const header = ['Mes','SaldoInicial','JurosMes','Aporte','SaldoFinal'];
   const rows = linhas.map(l=> [l.mes, l.inicial, l.juros, l.aporte, l.final]);
-  const csv = [header.join(';')].concat(rows.map(r=> r.join(';'))).join('\\n');
+  const csv = [header.join(';')].concat(rows.map(r=> r.join(';'))).join('\n');
   const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
@@ -454,3 +454,4 @@ document.addEventListener('DOMContentLoaded', ()=>{
 </script>
 </body>
 </html>
+
